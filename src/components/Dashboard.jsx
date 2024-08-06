@@ -253,7 +253,7 @@ function Dashboard() {
                   <div>
                     <h1 className="text-2xl font-bold">$6759.25</h1>
                     <div className="text-green-500 flex text-sm gap-1 mt-2">
-                      <BiSolidDownArrow className="mt-2" /> <span>3%</span>
+                      <BiSolidDownArrow className="mt-1" /> <span>3%</span>
                     </div>
                   </div>
                   <div className="pt-0 mt-0 flex flex-col justify-center items-center">
@@ -274,7 +274,7 @@ function Dashboard() {
           <div className="w-full mt-6">
             <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-6">
               <div className="md:col-span-8 bg-gray-700 rounded-md p-5">
-                <div className="chart-container w-full h-full p-4">
+                <div className="chart-container w-full h-full p-0 md:p-4">
                   <p className="text-xl font-semibold mb-4">Activity</p>
                   <ApexCharts
                     options={options}
@@ -286,62 +286,105 @@ function Dashboard() {
                 </div>
               </div>
               <div className="md:col-span-4 bg-gray-700 rounded-md p-5 ">
-                <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8">
-                  <div className="md:col-span-3">
-                    <div className="flex gap-4 items-cenetr ">
-                      <div className="bg-orange-200 rounded-full w-10 h-10 md:w-10 md:h-10 flex justify-center items-center">
-                        <GoGoal size={24} color="#f08756" />
+                {/* Desktop  */}
+                <div className="hidden md:block">
+                  <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8 ">
+                    <div className="md:col-span-3">
+                      <div className="flex gap-4 items-cenetr ">
+                        <div className="bg-orange-200 rounded-full w-10 h-10 md:w-10 md:h-10 flex justify-center items-center">
+                          <GoGoal size={24} color="#f08756" />
+                        </div>
+                        <h2 className="mt-2">Goals</h2>
                       </div>
-                      <h2 className="mt-2">Goals</h2>
+                    </div>
+                    <div className="col-span-1 mt-2">
+                      <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                        <MdNavigateNext size={24} color="white" />
+                      </div>
                     </div>
                   </div>
-                  <div className="col-span-1 mt-2">
-                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
-                      <MdNavigateNext size={24} color="white" />
+                  <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8">
+                    <div className="md:col-span-3">
+                      <div className="flex gap-4 items-cenetr ">
+                        <div className="bg-indigo-300 rounded-full w-10 h-10 flex justify-center items-center">
+                          <PiListStarLight size={24} color="#323694" />
+                        </div>
+                        <h2 className="mt-2">Popular Dishes</h2>
+                      </div>
+                    </div>
+                    <div className="col-span-1 mt-2">
+                      <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                        <MdNavigateNext size={24} color="white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8">
+                    <div className="md:col-span-3">
+                      <div className="flex gap-4 items-cenetr ">
+                        <div className="bg-green-200 rounded-full w-10 h-10 flex justify-center items-center">
+                          <LuMenuSquare size={24} color="#50de57" />
+                        </div>
+                        <h2 className="mt-2">Menus</h2>
+                      </div>
+                    </div>
+                    <div className="col-span-1 mt-2">
+                      <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                        <MdNavigateNext size={24} color="white" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full grid grid-cols-1 mt-8 md:grid-cols-4 gap-2">
+                    <div className="md:col-span-3">
+                      <div className="flex gap-4 items-cenetr ">
+                        <div className="bg-teal-200 rounded-full w-10 h-10 flex justify-center items-center">
+                          <IoDocumentTextOutline size={24} color="#3ecfc0" />
+                        </div>
+                        <h2 className="mt-2">List</h2>
+                      </div>
+                    </div>
+                    <div className="col-span-1 mt-2">
+                      <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                        <MdNavigateNext size={24} color="white" />
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8">
-                  <div className="md:col-span-3">
-                    <div className="flex gap-4 items-cenetr ">
-                      <div className="bg-indigo-300 rounded-full w-10 h-10 flex justify-center items-center">
-                        <PiListStarLight size={24} color="#323694" />
-                      </div>
-                      <h2 className="mt-2">Popular Dishes</h2>
+
+                {/* Mobile */}
+                <div className="md:hidden">
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-orange-200 rounded-full w-10 h-10 md:w-10 md:h-10 flex justify-center items-center">
+                      <GoGoal size={24} color="#f08756" />
                     </div>
-                  </div>
-                  <div className="col-span-1 mt-2">
-                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                    <h2 className="mt-2 text-sm">Goals</h2>
+                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center mt-2">
                       <MdNavigateNext size={24} color="white" />
                     </div>
                   </div>
-                </div>
-                <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-2 mt-8">
-                  <div className="md:col-span-3">
-                    <div className="flex gap-4 items-cenetr ">
-                      <div className="bg-green-200 rounded-full w-10 h-10 flex justify-center items-center">
-                        <LuMenuSquare size={24} color="#50de57" />
-                      </div>
-                      <h2 className="mt-2">Menus</h2>
+                  <div className="grid grid-cols-3 gap-4 mt-3">
+                    <div className="bg-indigo-300 rounded-full w-10 h-10 flex justify-center items-center">
+                      <PiListStarLight size={24} color="#323694" />
                     </div>
-                  </div>
-                  <div className="col-span-1 mt-2">
-                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                    <h2 className="mt-2 text-sm">Popular Dishes</h2>
+                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center mt-2">
                       <MdNavigateNext size={24} color="white" />
                     </div>
                   </div>
-                </div>
-                <div className="w-full grid grid-cols-1 mt-8 md:grid-cols-4 gap-2">
-                  <div className="md:col-span-3">
-                    <div className="flex gap-4 items-cenetr ">
-                      <div className="bg-teal-200 rounded-full w-10 h-10 flex justify-center items-center">
-                        <IoDocumentTextOutline size={24} color="#3ecfc0" />
-                      </div>
-                      <h2 className="mt-2">List</h2>
+                  <div className="grid grid-cols-3 gap-4 mt-3">
+                    <div className="bg-green-200 rounded-full w-10 h-10 flex justify-center items-center">
+                      <LuMenuSquare size={24} color="#50de57" />
+                    </div>
+                    <h2 className="mt-2 text-sm">Menus</h2>
+                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center mt-2">
+                      <MdNavigateNext size={24} color="white" />
                     </div>
                   </div>
-                  <div className="col-span-1 mt-2">
-                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center">
+                  <div className="grid grid-cols-3 gap-4 mt-3">
+                    <div className="bg-teal-200 rounded-full w-10 h-10 flex justify-center items-center">
+                      <IoDocumentTextOutline size={24} color="#3ecfc0" />
+                    </div>
+                    <h2 className="mt-2 text-sm">List</h2>
+                    <div className="bg-gray-400 rounded-full p-1 w-6 h-6 flex justify-center items-center mt-2">
                       <MdNavigateNext size={24} color="white" />
                     </div>
                   </div>
@@ -406,7 +449,7 @@ function Dashboard() {
               <div className="md:col-span-4 bg-gray-700 rounded-md p-5">
                 <h1 className="text-xl font-bold">Customer's feedback</h1>
                 <div className="overflow-auto max-h-72">
-                  {feedBackList?.map((item, index) => {
+                  {feedBackList?.map((item) => {
                     return (
                       <>
                         <div className="flex gap-3 mt-4">
@@ -418,7 +461,7 @@ function Dashboard() {
                           <p className="mt-2">{item.name}</p>
                         </div>
                         <div className="flex gap-2 ms-2 mt-3">
-                          {item.rate?.map((item, index) => {
+                          {item.rate?.map((item) => {
                             return (
                               <>
                                 <FaStar size={24} color="yellow" />
